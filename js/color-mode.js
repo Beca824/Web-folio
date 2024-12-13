@@ -7,7 +7,9 @@ const defaultMode = "light-mode";
 //load the user's preffered color mode from local storage
 
 function loadColorMode() {
-
+  const colorMode = localStorage.getItem(storageKey);
+  root.classList.add( colorMode || defaultMode );
+  updateToggleButton();
 }
 
 loadColorMode();
